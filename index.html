@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cultivation Idle</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import character from './character.js';
+        
+        function handleButtonClick(event) {
+            // Ignore clicks on the sub-button and the number field
+            if (event.target.classList.contains('sub-button') || event.target.classList.contains('number-field')) {
+                return;
+            }
+            
+            // Call the character.doAction function with the number field value
+            const numberField = document.querySelector('.number-field');
+            const value = parseInt(numberField.value) || 1;
+            character.doAction('cultivate', value);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="description"
+        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1;">
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            <p id="descriptionText" style="font-size: 20px;"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="stats">
+            <h2>Stats</h2>
+            <p>Qi: <span id="qi">1</span></p>
+        </div>
+        <div class="actions">
+            <div class="runningActions">
+                <h2 style="text-align: left;">Running</h2>
+            </div>
+            <div class="availableActions">
+                <h2 style="text-align: left;">Actions</h2>
+                <div class="actionGroup">
+                    <div class="button-container" onclick="handleButtonClick(event)">
+                        <div class="left-column">
+                          <div class="label">Cultivate</div>
+                          <img class="img" src="small_picture.jpg" alt="small picture">
+                        </div>
+                        <div class="right-column">
+                          <div>
+                            <input class="number-field" type="number" value="1" min="1" max="9999">
+                            <div class="sub-button" onclick="character.doAction('cultivate', -1)" onmouseover="event.stopPropagation()">∞</div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="options">
+            <h2>Options</h2>
+            <button class="languageOption" onclick="toggleLanguage()">English</button>
+            <button class="modeOption" onclick="toggleMode()">Light mode</button>
+        </div>
+    </div>
+    <script type="module" src="action.js"></script>
+    <script type="module" src="character.js"></script>
+    <script type="module">
+        import { typeText } from './action.js';
+        import character from './character.js';
+
+        // Call the typeText function when the window loads
+        window.onload = function () {
+            const descriptionWindow = document.getElementById("description");
+            descriptionWindow.style.display = "block";
+            typeText();
+        };
+
+        const main = setInterval(() => {
+            character.updateStats();
+        }, 10);
+
+                           
+        // Get references to the DOM elements
+        const cultivateButton = document.getElementById("cultivate-button");
+        const cultivateCountInput = document.getElementById("cultivate-count");
+        const cultivateInfiniteButton = document.getElementById("cultivate-infinite");
+        
+        // Add event listeners to the button and its sub-elements
+        cultivateButton.addEventListener("click", () => {
+            const count = Number(cultivateCountInput.value);
+            character.doAction("cultivate", count);
+        });
+        
+        cultivateInfiniteButton.addEventListener("click", () => {
+            character.doAction("cultivate", -1);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.stats {
+    flex-basis: 20%;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.actions {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.runningActions {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.availableActions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.availableActions .actionGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.action {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.progress {
+    margin-top: 10px;
+    height: 20px;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #0f0;
+    border-radius: 10px;
+    transition: width 1s linear;
+}
+
+.options {
+    flex-basis: 20%;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.languageOption {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modeOption {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 5px solid #555;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .button-container:hover {
+    background-color: #d9d9d9;
+  }
+  
+  .button-container:hover .sub-button {
+    background-color: #bfbfbf;
+  }
+  
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .label {
+    margin-bottom: 5px;
+  }
+  
+  .img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .number-field {
+    margin-right: 2px;
+    padding: 2px;
+    width: 70px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .sub-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    width: 100% - 6px;
+    height: 30px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+  }
+  
+  .sub-button:hover {
+    background-color: #bfbfbf;
+  }
+  
