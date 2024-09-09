@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://cop1brw20ded0"]
+
+[ext_resource type="Script" path="res://Story.cs" id="1_b8mqv"]
+[ext_resource type="PackedScene" uid="uid://ctdfawmi1sx7l" path="res://CultivateAction.tscn" id="2_mxksj"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="StoryLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Mask" type="ColorRect" parent="StoryLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.498039)
+
+[node name="Story" type="Label" parent="StoryLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 64
+text = "TEST"
+autowrap_mode = 2
+script = ExtResource("1_b8mqv")
+
+[node name="StoryButton" type="Button" parent="StoryLayer/Story"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -780.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Status" type="CanvasLayer" parent="."]
+
+[node name="StatusList" type="ItemList" parent="Status"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 400.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+item_count = 1
+item_0/text = "Qi: 1000"
+item_0/selectable = false
+
+[node name="Actions" type="CanvasLayer" parent="."]
+
+[node name="ActionList" type="ScrollContainer" parent="Actions"]
+offset_left = 400.0
+offset_top = 100.0
+offset_right = 1400.0
+offset_bottom = 1080.0
+
+[node name="VillageContainer" type="HBoxContainer" parent="Actions/ActionList"]
+layout_mode = 2
+
+[node name="Cultivate" parent="Actions/ActionList/VillageContainer" instance=ExtResource("2_mxksj")]
+layout_mode = 2
+
+[node name="Action" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="StoryLayer/Story/StoryButton" to="StoryLayer/Story" method="NextMessage"]

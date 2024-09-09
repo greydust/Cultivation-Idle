@@ -1,0 +1,123 @@
+{
+  "basic_manual": {
+    "name": "ITEM_BASIC_MANUAL_1",
+    "description": "ITEM_BASIC_MANUAL_DESCRIPTION_1",
+    "rank": [
+      {
+        "breakthrough": {
+          "qi": 1,
+          "proficiency": 100
+        },
+        "gain": {
+          "qi": 1,
+          "proficiency": 10
+        }
+      },
+      {
+        "breakthrough": {
+          "qi": 3,
+          "proficiency": 200
+        },
+        "gain": {
+          "qi": 2,
+          "proficiency": 10
+        }
+      },
+      {
+        "breakthrough": {
+          "qi": 6,
+          "proficiency": 300
+        },
+        "gain": {
+          "qi": 3,
+          "proficiency": 10
+        }
+      },
+      {
+        "breakthrough": {
+          "qi": 10,
+          "proficiency": 600
+        },
+        "gain": {
+          "qi": 4,
+          "proficiency": 10
+        }
+      },
+      {
+        "breakthrough": {
+          "qi": 15,
+          "proficiency": 1200
+        },
+        "gain": {
+          "qi": 5,
+          "proficiency": 10
+        }
+      },
+      {
+        "gain": {
+          "qi": 10
+        },
+        "reach": {
+          "flag": [
+            "MAIN_STORY_BASIC_MANUAL_MAX"
+          ]
+        }
+      }
+    ],
+    "powerup": [
+      {
+        "condition": [
+          {
+            "literacy": 200
+          }
+        ],
+        "bonus": [
+          {
+            "add_proficiency_ratio": 1,
+            "description": "ITEM_BASIC_MANUAL_DESCRIPTION_2"
+          }
+        ]
+      },
+      {
+        "condition": [
+          {
+            "literacy": 300
+          }
+        ],
+        "bonus": [
+          {
+            "add_proficiency_ratio": 1,
+            "description": "ITEM_BASIC_MANUAL_DESCRIPTION_3"
+          }
+        ]
+      },
+      {
+        "condition": [
+          {
+            "literacy": 400
+          }
+        ],
+        "bonus": [
+          {
+            "add_proficiency_ratio": 1,
+            "description": "ITEM_BASIC_MANUAL_DESCRIPTION_4"
+          }
+        ]
+      },
+      {
+        "condition": [
+          {
+            "literacy": 500
+          }
+        ],
+        "bonus": [
+          {
+            "add_proficiency_ratio": 1,
+            "name": "ITEM_BASIC_MANUAL_2",
+            "description": "ITEM_BASIC_MANUAL_DESCRIPTION_5"
+          }
+        ]
+      }
+    ]
+  }
+}

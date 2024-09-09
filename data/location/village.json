@@ -1,0 +1,15 @@
+{
+  "name": "LOCATION_VILLAGE",
+  "description": "LOCATION_VILLAGE_DESCRIPTION",
+  "action": [
+    {
+      "action": "cultivate"
+    },
+    {
+      "action": "literacy"
+    },
+    {
+      "action": "farm"
+    }
+  ]
+}

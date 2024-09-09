@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cidxleeuogda1"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_ul7iw"]
+[ext_resource type="PackedScene" uid="uid://cop1brw20ded0" path="res://HUD.tscn" id="2_75aha"]
+
+[node name="Main" type="Node" node_paths=PackedStringArray("Story", "StatusList")]
+script = ExtResource("1_ul7iw")
+Story = NodePath("HUD/StoryLayer/Story")
+StatusList = NodePath("HUD/Status/StatusList")
+
+[node name="HUD" parent="." instance=ExtResource("2_75aha")]

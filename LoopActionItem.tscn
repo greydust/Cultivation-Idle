@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://b674adsogs6vr"]
+
+[ext_resource type="Script" path="res://IntegerLineEdit.cs" id="1_tunvt"]
+[ext_resource type="Script" path="res://InfiniteCheckBox.cs" id="2_5naef"]
+
+[node name="ActionButton" type="CanvasLayer"]
+
+[node name="Action" type="Button" parent="."]
+offset_right = 170.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 32
+clip_text = true
+
+[node name="Option" type="OptionButton" parent="."]
+offset_left = 171.0
+offset_right = 300.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 16
+
+[node name="Times" type="LineEdit" parent="."]
+offset_left = 171.0
+offset_top = 51.0
+offset_right = 239.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 16
+placeholder_text = "1"
+alignment = 2
+max_length = 4
+script = ExtResource("1_tunvt")
+
+[node name="Infinite" type="CheckBox" parent="." node_paths=PackedStringArray("Repeat")]
+offset_left = 240.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 10
+text = "INF"
+clip_text = true
+script = ExtResource("2_5naef")
+Repeat = NodePath("../Times")
+
+[connection signal="focus_exited" from="Times" to="Times" method="UpdateValue"]
+[connection signal="text_submitted" from="Times" to="Times" method="UpdateValue" unbinds=1]
+[connection signal="toggled" from="Infinite" to="Infinite" method="OnToggled"]
